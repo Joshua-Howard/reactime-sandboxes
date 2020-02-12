@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import './styles.sass';
 
@@ -10,6 +10,14 @@ import App from '../component/App';
 
 const Scenes = ({}) => {
   // const [count, setCount] = useState(0);
+
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     setCount(last => last + 1);
+
+  //     console.log(count);
+  //   }, 300);
+  // }, []);
 
   return (
     <div>
