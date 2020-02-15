@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import './styles.sass';
 import UseState from './sandboxes/useState';
 import UseEffect from './sandboxes/useEffect';
@@ -14,8 +14,8 @@ import ComponentDidMount from './sandboxes/componentDidMount';
 // const mapStateToProps = state => ({});
 // const mapDispatchToProps = dispatch => ({});
 
-const Scenes = ({}) => {
-  const [activeSandbox, setActiveSandbox] = useState('UseState');
+const Scenes = () => {
+  const [activeSandbox, setActiveSandbox] = useState('UseEffect');
 
   function changeSandbox(e) {
     const { innerText } = e.target;
@@ -25,16 +25,32 @@ const Scenes = ({}) => {
   function sandboxButtons() {
     return (
       <>
-        <button onClick={changeSandbox}>UseState</button>
-        <button onClick={changeSandbox}>UseEffect</button>
-        <button onClick={changeSandbox}>UseContext</button>
-        <button onClick={changeSandbox}>UseMemo</button>
+        <button type="button" onClick={changeSandbox}>
+          UseState
+        </button>
+        <button type="button" onClick={changeSandbox}>
+          UseEffect
+        </button>
+        <button type="button" onClick={changeSandbox}>
+          UseContext
+        </button>
+        <button type="button" onClick={changeSandbox}>
+          UseMemo
+        </button>
         <div>|</div>
-        <button onClick={changeSandbox}>Redux</button>
-        <button onClick={changeSandbox}>Router</button>
+        <button type="button" onClick={changeSandbox}>
+          Redux
+        </button>
+        <button type="button" onClick={changeSandbox}>
+          Router
+        </button>
         <div>|</div>
-        <button onClick={changeSandbox}>SetState</button>
-        <button onClick={changeSandbox}>ComponentDidMount</button>
+        <button type="button" onClick={changeSandbox}>
+          SetState
+        </button>
+        <button type="button" onClick={changeSandbox}>
+          ComponentDidMount
+        </button>
       </>
     );
   }

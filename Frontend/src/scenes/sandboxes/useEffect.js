@@ -1,24 +1,53 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import React, { useEffect } from 'react';
+// import { connect } from 'react-redux';
 import './styles.sass';
+import UseEffectAndState from './useEffectAndState';
 
 // import * as actions from '../redux/actions/actions';
 // const mapStateToProps = state => ({});
 // const mapDispatchToProps = dispatch => ({});
 
-const Scenes = ({}) => {
-  const [count, setCount] = useState(0);
+const UseEffect = () => {
+  useEffect(() => {
+    const effectDiv = document.getElementById('effectDiv');
+
+    //* Create three divs to append to effectDiv
+    const newDivElement = document.createElement('div');
+    const newDivTextNode = document.createTextNode('New Div');
+
+    const newDivElement2 = document.createElement('div');
+    const newDivTextNode2 = document.createTextNode('New Div 2');
+
+    const newDivElement3 = document.createElement('div');
+    const newDivTextNode3 = document.createTextNode('New Div 3');
+
+    newDivElement.appendChild(newDivTextNode);
+    newDivElement2.appendChild(newDivTextNode2);
+    newDivElement3.appendChild(newDivTextNode3);
+
+    setTimeout(() => effectDiv.appendChild(newDivElement), 300);
+    setTimeout(() => effectDiv.appendChild(newDivElement2), 1200);
+    setTimeout(() => effectDiv.appendChild(newDivElement3), 2200);
+  }, []);
 
   return (
-    <div>
-      <div>Count {count}</div>
+    <>
+      <div className="font-weight-bold">
+        3 new divs will appear below
+        <div id="effectDiv" />
+      </div>
 
-      <button onClick={() => setCount(lastCount => lastCount + 1)}>
-        Click Here to Increase the Count
-      </button>
-    </div>
+      <div className="bg-primary p-1 my-3 mx-5 vh-5 text-white text-center font-weight-bold">
+        New Test Below
+      </div>
+
+      <div className="font-weight-bold">
+        UseEffect triggers an interval that changes this state variable =>{' '}
+        <UseEffectAndState />
+      </div>
+    </>
   );
 };
 
-export default Scenes;
+export default UseEffect;
 // export default connect(mapStateToProps, mapDispatchToProps)(Scenes);

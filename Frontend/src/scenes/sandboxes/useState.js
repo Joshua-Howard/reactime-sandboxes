@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import './styles.sass';
 
 // import * as actions from '../redux/actions/actions';
 // const mapStateToProps = state => ({});
 // const mapDispatchToProps = dispatch => ({});
 
-const UseState = ({}) => {
+const UseState = () => {
   const [count, setCount] = useState(0);
 
   const [count2, setCount2] = useState(0);
@@ -15,9 +15,15 @@ const UseState = ({}) => {
   return (
     <div>
       <div>
-        <div>Count {count}</div>
+        <div>
+          Count
+          {count}
+        </div>
 
-        <button onClick={() => setCount(lastCount => lastCount + 1)}>
+        <button
+          type="button"
+          onClick={() => setCount(lastCount => lastCount + 1)}
+        >
           Click Here to Increase the Count
         </button>
       </div>
@@ -27,10 +33,17 @@ const UseState = ({}) => {
       </div>
 
       <div>
-        <div>Count Increase {count2}</div>
-        <div>Count Decrease {count3}</div>
+        <div>
+          Count Increase
+          {count2}
+        </div>
+        <div>
+          Count Decrease
+          {count3}
+        </div>
 
         <button
+          type="button"
           onClick={() => {
             setCount2(lastCount => lastCount + 1);
             setCount3(lastCount => lastCount - 1);
