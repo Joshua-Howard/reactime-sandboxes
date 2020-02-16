@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './styles.sass';
+import SetStateChild from './setStateChild';
 
 class SetState extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class SetState extends Component {
 
     return (
       <div>
-        <div>
+        <div className="font-weight-bold">
           Count
           {` ${count}`}
         </div>
@@ -24,10 +25,17 @@ class SetState extends Component {
           type="button"
           onClick={() =>
             // eslint-disable-next-line prettier/prettier
-            this.setState(prevState => ({ count: prevState.count + 1 }))}
+            this.setState(prevState => ({ count: prevState.count + 1 }))
+          }
         >
           Click Here to Increase the Count (setState)
         </button>
+
+        <div className="bg-primary p-1 my-3 mx-5 vh-5 text-white text-center">
+          Child Component Below
+        </div>
+
+        <SetStateChild />
       </div>
     );
   }

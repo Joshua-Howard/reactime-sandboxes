@@ -49,7 +49,7 @@ const UseState = () => {
             setCount3(lastCount => lastCount - 1);
           }}
         >
-          Click Here to Change 2 Counts Simultaneously
+          Click Here to Change both Counts Simultaneously
         </button>
       </div>
     </div>

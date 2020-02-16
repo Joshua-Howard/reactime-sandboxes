@@ -36,7 +36,8 @@ const UseEffect = () => {
   return (
     <>
       <div className="font-weight-bold">
-        3 new divs will appear below
+        3 new divs will appear below due to elements being appended within
+        useEffect (setTimeout is used)
         <div id="effectDiv" />
       </div>
 

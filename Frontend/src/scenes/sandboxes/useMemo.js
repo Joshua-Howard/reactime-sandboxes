@@ -37,7 +37,9 @@ const UseMemo = () => {
         className="ml-4"
       >
         Click Here to Toggle Freezing the Count. Status:
-        {frozen ? ' Frozen' : ' Not Frozen'}
+        <span className="font-weight-bold">
+          {frozen ? ' Frozen' : ' Not Frozen'}
+        </span>
       </button>
     </div>
   );

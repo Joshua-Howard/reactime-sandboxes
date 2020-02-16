@@ -29,7 +29,7 @@ class ComponentDidMount extends Component {
     return (
       <div>
         <div>
-          Count will automatically increase
+          Count will automatically increase as setState is called at an interval
           {` ${count}`}
         </div>
       </div>

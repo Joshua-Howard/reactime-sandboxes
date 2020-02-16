@@ -84,7 +84,7 @@ const Scenes = () => {
         >
           Redux
         </button>
-        <button
+        {/* <button
           type="button"
           onClick={changeSandbox}
           style={
@@ -94,7 +94,7 @@ const Scenes = () => {
           }
         >
           Router
-        </button>
+        </button> */}
         <div>|</div>
         <button
           type="button"
