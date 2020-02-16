@@ -16,7 +16,7 @@ import AppContextProvider from '../context/appContextProvider';
 // const mapDispatchToProps = dispatch => ({});
 
 const Scenes = () => {
-  const [activeSandbox, setActiveSandbox] = useState('UseContext');
+  const [activeSandbox, setActiveSandbox] = useState('UseMemo');
 
   function changeSandbox(e) {
     const { innerText } = e.target;
