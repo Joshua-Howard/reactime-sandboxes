@@ -1,27 +1,39 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import './styles.sass';
+import { increaseCount } from '../../redux/actions/actions';
 
-// import * as actions from '../redux/actions/actions';
-// const mapStateToProps = state => ({});
-// const mapDispatchToProps = dispatch => ({});
+class ComponentDidMount extends Component {
+  constructor(props) {
+    super(props);
 
-const Scenes = ({}) => {
-  const [count, setCount] = useState(0);
+    this.state = {
+      count: 0
+    };
+  }
 
-  return (
-    <div>
+  componentDidMount() {
+    this.countInterval = setInterval(this.increaseCount, 100);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.countInterval);
+  }
+
+  increaseCount = () => {
+    this.setState(prevState => ({ count: prevState.count + 1 }));
+  };
+
+  render() {
+    const { count } = this.state;
+
+    return (
       <div>
-        Count
-        {` ${count}`}
+        <div>
+          Count will automatically increase
+          {` ${count}`}
+        </div>
       </div>
-
-      <button onClick={() => setCount(lastCount => lastCount + 1)}>
-        Click Here to Increase the Count
-      </button>
-    </div>
-  );
-};
-
-export default Scenes;
-// export default connect(mapStateToProps, mapDispatchToProps)(Scenes);
+    );
+  }
+}
+export default ComponentDidMount;
