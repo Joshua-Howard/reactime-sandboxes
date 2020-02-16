@@ -13,7 +13,7 @@ const UseMemo = () => {
     () => () => (
       <div>
         Count
-        {count}
+        {` ${count}`}
       </div>
     ),
     [frozen ? null : count]

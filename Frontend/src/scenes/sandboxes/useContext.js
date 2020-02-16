@@ -13,11 +13,11 @@ const UseContext = () => {
     <div>
       <div>
         Count
-        {count}
+        {` ${count}`}
       </div>
 
       <button type="button" onClick={() => setCount()}>
-        Click Here to Increase the Count
+        Click Here to Increase the Count (Context Data)
       </button>
     </div>
   );

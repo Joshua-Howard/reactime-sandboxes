@@ -1,24 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import './styles.sass';
 
-// import * as actions from '../redux/actions/actions';
-// const mapStateToProps = state => ({});
-// const mapDispatchToProps = dispatch => ({});
+import * as actions from '../../redux/actions/actions';
 
-const Scenes = ({}) => {
-  const [count, setCount] = useState(0);
+const mapStateToProps = state => ({
+  count: state.core.count
+});
+const mapDispatchToProps = dispatch => ({
+  increaseCount: () => dispatch(actions.increaseCount())
+});
 
+const Scenes = ({ count, increaseCount }) => {
   return (
     <div>
-      <div>Count {count}</div>
+      <div>
+        Count
+        {` ${count}`}
+      </div>
 
-      <button onClick={() => setCount(lastCount => lastCount + 1)}>
-        Click Here to Increase the Count
+      <button type="button" onClick={increaseCount}>
+        Click Here to Increase the Count (Redux Data)
       </button>
     </div>
   );
 };
 
-export default Scenes;
-// export default connect(mapStateToProps, mapDispatchToProps)(Scenes);
+export default connect(mapStateToProps, mapDispatchToProps)(Scenes);

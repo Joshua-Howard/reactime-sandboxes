@@ -17,7 +17,7 @@ const UseState = () => {
       <div>
         <div>
           Count
-          {count}
+          {` ${count}`}
         </div>
 
         <button
@@ -35,11 +35,11 @@ const UseState = () => {
       <div>
         <div>
           Count Increase
-          {count2}
+          {` ${count2}`}
         </div>
         <div>
           Count Decrease
-          {count3}
+          {` ${count3}`}
         </div>
 
         <button

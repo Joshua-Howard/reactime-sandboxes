@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Provider } from 'react-redux';
+import store from '../redux/store';
 // import { connect } from 'react-redux';
 import './styles.sass';
 import UseState from './sandboxes/useState';
@@ -16,7 +18,7 @@ import AppContextProvider from '../context/appContextProvider';
 // const mapDispatchToProps = dispatch => ({});
 
 const Scenes = () => {
-  const [activeSandbox, setActiveSandbox] = useState('UseMemo');
+  const [activeSandbox, setActiveSandbox] = useState('Redux');
 
   function changeSandbox(e) {
     const { innerText } = e.target;
@@ -139,7 +141,11 @@ const Scenes = () => {
         return <UseMemo />;
 
       case 'Redux':
-        return <Redux />;
+        return (
+          <Provider store={store}>
+            <Redux />
+          </Provider>
+        );
 
       case 'Router':
         return <Router />;

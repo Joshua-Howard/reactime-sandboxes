@@ -11,7 +11,10 @@ const Scenes = ({}) => {
 
   return (
     <div>
-      <div>Count {count}</div>
+      <div>
+        Count
+        {` ${count}`}
+      </div>
 
       <button onClick={() => setCount(lastCount => lastCount + 1)}>
         Click Here to Increase the Count
