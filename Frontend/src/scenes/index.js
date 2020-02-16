@@ -9,13 +9,14 @@ import Redux from './sandboxes/redux';
 import Router from './sandboxes/router';
 import SetState from './sandboxes/setState';
 import ComponentDidMount from './sandboxes/componentDidMount';
+import AppContextProvider from '../context/appContextProvider';
 
 // import * as actions from '../redux/actions/actions';
 // const mapStateToProps = state => ({});
 // const mapDispatchToProps = dispatch => ({});
 
 const Scenes = () => {
-  const [activeSandbox, setActiveSandbox] = useState('UseEffect');
+  const [activeSandbox, setActiveSandbox] = useState('UseContext');
 
   function changeSandbox(e) {
     const { innerText } = e.target;
@@ -25,30 +26,94 @@ const Scenes = () => {
   function sandboxButtons() {
     return (
       <>
-        <button type="button" onClick={changeSandbox}>
+        <button
+          type="button"
+          onClick={changeSandbox}
+          style={
+            activeSandbox === 'UseState'
+              ? { outline: 'none', backgroundColor: 'cornflowerblue' }
+              : null
+          }
+        >
           UseState
         </button>
-        <button type="button" onClick={changeSandbox}>
+        <button
+          type="button"
+          onClick={changeSandbox}
+          style={
+            activeSandbox === 'UseEffect'
+              ? { outline: 'none', backgroundColor: 'cornflowerblue' }
+              : null
+          }
+        >
           UseEffect
         </button>
-        <button type="button" onClick={changeSandbox}>
+        <button
+          type="button"
+          onClick={changeSandbox}
+          style={
+            activeSandbox === 'UseContext'
+              ? { outline: 'none', backgroundColor: 'cornflowerblue' }
+              : null
+          }
+        >
           UseContext
         </button>
-        <button type="button" onClick={changeSandbox}>
+        <button
+          type="button"
+          onClick={changeSandbox}
+          style={
+            activeSandbox === 'UseMemo'
+              ? { outline: 'none', backgroundColor: 'cornflowerblue' }
+              : null
+          }
+        >
           UseMemo
         </button>
         <div>|</div>
-        <button type="button" onClick={changeSandbox}>
+        <button
+          type="button"
+          onClick={changeSandbox}
+          style={
+            activeSandbox === 'Redux'
+              ? { outline: 'none', backgroundColor: 'cornflowerblue' }
+              : null
+          }
+        >
           Redux
         </button>
-        <button type="button" onClick={changeSandbox}>
+        <button
+          type="button"
+          onClick={changeSandbox}
+          style={
+            activeSandbox === 'Router'
+              ? { outline: 'none', backgroundColor: 'cornflowerblue' }
+              : null
+          }
+        >
           Router
         </button>
         <div>|</div>
-        <button type="button" onClick={changeSandbox}>
+        <button
+          type="button"
+          onClick={changeSandbox}
+          style={
+            activeSandbox === 'SetState'
+              ? { outline: 'none', backgroundColor: 'cornflowerblue' }
+              : null
+          }
+        >
           SetState
         </button>
-        <button type="button" onClick={changeSandbox}>
+        <button
+          type="button"
+          onClick={changeSandbox}
+          style={
+            activeSandbox === 'ComponentDidMount'
+              ? { outline: 'none', backgroundColor: 'cornflowerblue' }
+              : null
+          }
+        >
           ComponentDidMount
         </button>
       </>
@@ -64,7 +129,11 @@ const Scenes = () => {
         return <UseEffect />;
 
       case 'UseContext':
-        return <UseContext />;
+        return (
+          <AppContextProvider>
+            <UseContext />
+          </AppContextProvider>
+        );
 
       case 'UseMemo':
         return <UseMemo />;

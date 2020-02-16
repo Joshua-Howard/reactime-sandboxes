@@ -1,24 +1,27 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import React, { useContext } from 'react';
+import AppContext from '../../context/appContext';
 import './styles.sass';
 
 // import * as actions from '../redux/actions/actions';
 // const mapStateToProps = state => ({});
 // const mapDispatchToProps = dispatch => ({});
 
-const Scenes = ({}) => {
-  const [count, setCount] = useState(0);
+const UseContext = () => {
+  const { count, setCount } = useContext(AppContext);
 
   return (
     <div>
-      <div>Count {count}</div>
+      <div>
+        Count
+        {count}
+      </div>
 
-      <button onClick={() => setCount(lastCount => lastCount + 1)}>
+      <button type="button" onClick={() => setCount()}>
         Click Here to Increase the Count
       </button>
     </div>
   );
 };
 
-export default Scenes;
+export default UseContext;
 // export default connect(mapStateToProps, mapDispatchToProps)(Scenes);

@@ -1,3 +1,6 @@
+/* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable no-undef */
 import React, { useEffect } from 'react';
 // import { connect } from 'react-redux';
 import './styles.sass';
