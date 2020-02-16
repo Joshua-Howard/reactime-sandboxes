@@ -1,27 +1,35 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import './styles.sass';
 
-// import * as actions from '../redux/actions/actions';
-// const mapStateToProps = state => ({});
-// const mapDispatchToProps = dispatch => ({});
+class SetState extends Component {
+  constructor(props) {
+    super(props);
 
-const Scenes = ({}) => {
-  const [count, setCount] = useState(0);
+    this.state = {
+      count: 0
+    };
+  }
 
-  return (
-    <div>
+  render() {
+    const { count } = this.state;
+
+    return (
       <div>
-        Count
-        {` ${count}`}
+        <div>
+          Count
+          {` ${count}`}
+        </div>
+
+        <button
+          type="button"
+          onClick={() =>
+            // eslint-disable-next-line prettier/prettier
+            this.setState(prevState => ({ count: prevState.count + 1 }))}
+        >
+          Click Here to Increase the Count (setState)
+        </button>
       </div>
-
-      <button onClick={() => setCount(lastCount => lastCount + 1)}>
-        Click Here to Increase the Count
-      </button>
-    </div>
-  );
-};
-
-export default Scenes;
-// export default connect(mapStateToProps, mapDispatchToProps)(Scenes);
+    );
+  }
+}
+export default SetState;

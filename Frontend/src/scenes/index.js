@@ -18,7 +18,7 @@ import AppContextProvider from '../context/appContextProvider';
 // const mapDispatchToProps = dispatch => ({});
 
 const Scenes = () => {
-  const [activeSandbox, setActiveSandbox] = useState('Redux');
+  const [activeSandbox, setActiveSandbox] = useState('SetState');
 
   function changeSandbox(e) {
     const { innerText } = e.target;
