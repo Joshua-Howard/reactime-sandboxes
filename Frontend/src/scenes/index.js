@@ -26,100 +26,40 @@ const Scenes = () => {
   }
 
   function sandboxButtons() {
-    return (
-      <>
+    const buttonsArray = [
+      'UseState',
+      'UseEffect',
+      'UseContext',
+      'UseMemo',
+      '|',
+      'Redux',
+      'Router',
+      '|',
+      'SetState',
+      'ComponentDidMount'
+    ];
+
+    const buttons = buttonsArray.map(buttonName => {
+      if (buttonName === '|') {
+        return <div>{buttonName}</div>;
+      }
+
+      return (
         <button
           type="button"
           onClick={changeSandbox}
           style={
-            activeSandbox === 'UseState'
+            activeSandbox === buttonName
               ? { outline: 'none', backgroundColor: 'cornflowerblue' }
               : null
           }
         >
-          UseState
+          {buttonName}
         </button>
-        <button
-          type="button"
-          onClick={changeSandbox}
-          style={
-            activeSandbox === 'UseEffect'
-              ? { outline: 'none', backgroundColor: 'cornflowerblue' }
-              : null
-          }
-        >
-          UseEffect
-        </button>
-        <button
-          type="button"
-          onClick={changeSandbox}
-          style={
-            activeSandbox === 'UseContext'
-              ? { outline: 'none', backgroundColor: 'cornflowerblue' }
-              : null
-          }
-        >
-          UseContext
-        </button>
-        <button
-          type="button"
-          onClick={changeSandbox}
-          style={
-            activeSandbox === 'UseMemo'
-              ? { outline: 'none', backgroundColor: 'cornflowerblue' }
-              : null
-          }
-        >
-          UseMemo
-        </button>
-        <div>|</div>
-        <button
-          type="button"
-          onClick={changeSandbox}
-          style={
-            activeSandbox === 'Redux'
-              ? { outline: 'none', backgroundColor: 'cornflowerblue' }
-              : null
-          }
-        >
-          Redux
-        </button>
-        {/* <button
-          type="button"
-          onClick={changeSandbox}
-          style={
-            activeSandbox === 'Router'
-              ? { outline: 'none', backgroundColor: 'cornflowerblue' }
-              : null
-          }
-        >
-          Router
-        </button> */}
-        <div>|</div>
-        <button
-          type="button"
-          onClick={changeSandbox}
-          style={
-            activeSandbox === 'SetState'
-              ? { outline: 'none', backgroundColor: 'cornflowerblue' }
-              : null
-          }
-        >
-          SetState
-        </button>
-        <button
-          type="button"
-          onClick={changeSandbox}
-          style={
-            activeSandbox === 'ComponentDidMount'
-              ? { outline: 'none', backgroundColor: 'cornflowerblue' }
-              : null
-          }
-        >
-          ComponentDidMount
-        </button>
-      </>
-    );
+      );
+    });
+
+    return <>{buttons}</>;
   }
 
   function displaySandbox() {
