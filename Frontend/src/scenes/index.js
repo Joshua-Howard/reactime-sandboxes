@@ -39,13 +39,14 @@ const Scenes = () => {
       'ComponentDidMount'
     ];
 
-    const buttons = buttonsArray.map(buttonName => {
+    const buttons = buttonsArray.map((buttonName, index) => {
       if (buttonName === '|') {
-        return <div>{buttonName}</div>;
+        return <div key={buttonName + index}>{buttonName}</div>;
       }
 
       return (
         <button
+          key={buttonName + index}
           type="button"
           onClick={changeSandbox}
           style={
