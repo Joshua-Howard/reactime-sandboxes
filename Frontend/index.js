@@ -5,6 +5,9 @@ import App from './app';
 
 const rootContainer = document.getElementById('root');
 
-ReactDOM.render(<App />, rootContainer);
+// Concurrent Mode
+const root = ReactDOM.createRoot(rootContainer);
 
-reactime(rootContainer);
+root.render(<App />);
+
+reactime(root);
