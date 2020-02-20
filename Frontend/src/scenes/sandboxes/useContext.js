@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import AppContext from '../../context/appContext';
 import './styles.sass';
 
@@ -8,16 +8,29 @@ import './styles.sass';
 
 const UseContext = () => {
   const { count, setCount } = useContext(AppContext);
+  const [stateCount, setStateCount] = useState(0);
 
   return (
     <div>
       <div>
-        Count
+        Context Count
         {` ${count}`}
       </div>
 
       <button type="button" onClick={() => setCount()}>
         Click Here to Increase the Count (Context Data)
+      </button>
+
+      <div className="mt-5">
+        State Button Count
+        {` ${stateCount}`}
+      </div>
+
+      <button
+        type="button"
+        onClick={() => setStateCount(lastCount => lastCount + 1)}
+      >
+        Click Here to Increase the Count (Data Stored in State)
       </button>
     </div>
   );
