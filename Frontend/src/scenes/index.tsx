@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { Provider } from 'react-redux';
-import store from '../redux/store';
+// import { Provider } from 'react-redux';
+// import store from '../redux/store';
 // import { connect } from 'react-redux';
 import './styles.sass';
 import UseState from './sandboxes/useState';
-import UseEffect from './sandboxes/useEffect';
-import UseContext from './sandboxes/useContext';
-import UseMemo from './sandboxes/useMemo';
-import Redux from './sandboxes/redux';
-import Router from './sandboxes/router';
-import SetState from './sandboxes/setState';
-import ComponentDidMount from './sandboxes/componentDidMount';
-import AppContextProvider from '../context/appContextProvider';
+// import UseEffect from './sandboxes/useEffect';
+// import UseContext from './sandboxes/useContext';
+// import UseMemo from './sandboxes/useMemo';
+// import Redux from './sandboxes/redux';
+// import Router from './sandboxes/router';
+// import SetState from './sandboxes/setState';
+// import ComponentDidMount from './sandboxes/componentDidMount';
+// import AppContextProvider from '../context/appContextProvider';
 
 // import * as actions from '../redux/actions/actions';
 // const mapStateToProps = state => ({});
@@ -20,8 +20,10 @@ import AppContextProvider from '../context/appContextProvider';
 const Scenes = () => {
   const [activeSandbox, setActiveSandbox] = useState('UseState');
 
-  function changeSandbox(e) {
-    const { innerText } = e.target;
+  function changeSandbox(
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) {
+    const { innerText } = event.target as HTMLElement;
     setActiveSandbox(innerText);
   }
 
@@ -65,37 +67,37 @@ const Scenes = () => {
 
   function displaySandbox() {
     switch (activeSandbox) {
-      case 'UseState':
-        return <UseState />;
+      // case 'UseState':
+      //   return <UseState />;
 
-      case 'UseEffect':
-        return <UseEffect />;
+      // case 'UseEffect':
+      //   return <UseEffect />;
 
-      case 'UseContext':
-        return (
-          <AppContextProvider>
-            <UseContext />
-          </AppContextProvider>
-        );
+      // case 'UseContext':
+      //   return (
+      //     <AppContextProvider>
+      //       <UseContext />
+      //     </AppContextProvider>
+      //   );
 
-      case 'UseMemo':
-        return <UseMemo />;
+      // case 'UseMemo':
+      //   return <UseMemo />;
 
-      case 'Redux':
-        return (
-          <Provider store={store}>
-            <Redux />
-          </Provider>
-        );
+      // case 'Redux':
+      //   return (
+      //     <Provider store={store}>
+      //       <Redux />
+      //     </Provider>
+      //   );
 
-      case 'Router':
-        return <Router />;
+      // case 'Router':
+      //   return <Router />;
 
-      case 'SetState':
-        return <SetState />;
+      // case 'SetState':
+      //   return <SetState />;
 
-      case 'ComponentDidMount':
-        return <ComponentDidMount />;
+      // case 'ComponentDidMount':
+      //   return <ComponentDidMount />;
 
       default:
         return <UseState />;
