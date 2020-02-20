@@ -28,9 +28,24 @@ const UseEffect = () => {
     newDivElement2.appendChild(newDivTextNode2);
     newDivElement3.appendChild(newDivTextNode3);
 
-    setTimeout(() => effectDiv.appendChild(newDivElement), 300);
-    setTimeout(() => effectDiv.appendChild(newDivElement2), 1200);
-    setTimeout(() => effectDiv.appendChild(newDivElement3), 2200);
+    const timeout1 = setTimeout(
+      () => effectDiv.appendChild(newDivElement),
+      300
+    );
+    const timeout2 = setTimeout(
+      () => effectDiv.appendChild(newDivElement2),
+      1200
+    );
+    const timeout3 = setTimeout(
+      () => effectDiv.appendChild(newDivElement3),
+      2200
+    );
+
+    return () => {
+      clearTimeout(timeout1);
+      clearTimeout(timeout2);
+      clearTimeout(timeout3);
+    };
   }, []);
 
   return (
