@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import UseStateChild from './useStateChild';
 import './styles.sass';
 
 import * as actions from '../../redux/actions/actions';
@@ -31,11 +32,14 @@ const Scenes = ({ count, increaseCount }) => {
       </div>
 
       <button
+        className="mb-5"
         type="button"
         onClick={() => setStateCount(lastCount => lastCount + 1)}
       >
         Click Here to Increase the Count (Data Stored in State)
       </button>
+
+      <UseStateChild />
     </div>
   );
 };

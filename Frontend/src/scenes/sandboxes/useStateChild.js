@@ -14,11 +14,11 @@ const UseStateChild = () => {
     <div>
       <div>
         <div>
-          Child Component Count Increase
+          Child Component Count Increase (UseState):
           {` ${count2}`}
         </div>
         <div>
-          Child Component Count Decrease
+          Child Component Count Decrease (UseState):
           {` ${count3}`}
         </div>
 

@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import UseStateChild from './useStateChild';
 import './styles.sass';
 
 // import * as actions from '../redux/actions/actions';
@@ -49,11 +50,14 @@ const UseMemo = () => {
       </div>
 
       <button
+        className="mb-5"
         type="button"
         onClick={() => setStateCount(lastCount => lastCount + 1)}
       >
         Click Here to Increase the Count (Data Stored in State)
       </button>
+
+      <UseStateChild />
     </div>
   );
 };

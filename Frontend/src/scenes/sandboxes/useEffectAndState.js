@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 // import { connect } from 'react-redux';
+import UseStateChild from './useStateChild';
 import './styles.sass';
 
 // import * as actions from '../redux/actions/actions';
@@ -48,10 +49,12 @@ const UseEffectAndState = () => {
         Click Here to Increase the State Count Directly Above
       </button>
 
-      <div className="mt-3">
+      <div className="mt-3 mb-5">
         Effect Count Should Increase When Button Count is Even:
         {effectCount}
       </div>
+
+      <UseStateChild />
     </>
   );
 };
