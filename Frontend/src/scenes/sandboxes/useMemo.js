@@ -8,6 +8,7 @@ import './styles.sass';
 const UseMemo = () => {
   const [count, setCount] = useState(0);
   const [frozen, setFrozen] = useState(false);
+  const [stateCount, setStateCount] = useState(0);
 
   const countDisplay = useMemo(
     () => () => (
@@ -40,6 +41,18 @@ const UseMemo = () => {
         <span className="font-weight-bold">
           {frozen ? ' Frozen' : ' Not Frozen'}
         </span>
+      </button>
+
+      <div className="mt-5">
+        State Button Count
+        {` ${stateCount}`}
+      </div>
+
+      <button
+        type="button"
+        onClick={() => setStateCount(lastCount => lastCount + 1)}
+      >
+        Click Here to Increase the Count (Data Stored in State)
       </button>
     </div>
   );

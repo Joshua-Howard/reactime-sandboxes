@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import './styles.sass';
 
@@ -12,6 +12,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const Scenes = ({ count, increaseCount }) => {
+  const [stateCount, setStateCount] = useState(0);
+
   return (
     <div>
       <div>
@@ -21,6 +23,18 @@ const Scenes = ({ count, increaseCount }) => {
 
       <button type="button" onClick={increaseCount}>
         Click Here to Increase the Count (Redux Data)
+      </button>
+
+      <div className="mt-5">
+        State Button Count
+        {` ${stateCount}`}
+      </div>
+
+      <button
+        type="button"
+        onClick={() => setStateCount(lastCount => lastCount + 1)}
+      >
+        Click Here to Increase the Count (Data Stored in State)
       </button>
     </div>
   );

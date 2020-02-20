@@ -43,7 +43,7 @@ const UseEffectAndState = () => {
       <button
         type="button"
         className="mt-3"
-        onClick={() => setButtonCount(buttonCount => buttonCount + 1)}
+        onClick={() => setButtonCount(buttonCountVal => buttonCountVal + 1)}
       >
         Click Here to Increase the State Count Directly Above
       </button>

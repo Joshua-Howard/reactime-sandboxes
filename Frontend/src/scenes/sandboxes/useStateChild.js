@@ -14,11 +14,11 @@ const UseStateChild = () => {
     <div>
       <div>
         <div>
-          Count Increase
+          Child Component Count Increase
           {` ${count2}`}
         </div>
         <div>
-          Count Decrease
+          Child Component Count Decrease
           {` ${count3}`}
         </div>
 
@@ -29,7 +29,7 @@ const UseStateChild = () => {
             setCount3(lastCount => lastCount - 1);
           }}
         >
-          Click Here to Change both Counts Simultaneously
+          Click Here to Change Both Child Counts Simultaneously
         </button>
       </div>
     </div>
