@@ -2,7 +2,11 @@
 import React, { useState } from 'react';
 import AppContext from './appContext';
 
-function AppContextProvider(props) {
+interface ContextProps {
+  children: React.ReactNode;
+}
+
+function AppContextProvider(props: ContextProps) {
   const { children } = props;
   const [count, setCount] = useState(0);
 

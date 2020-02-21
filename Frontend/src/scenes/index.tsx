@@ -4,14 +4,14 @@ import React, { useState } from 'react';
 // import { connect } from 'react-redux';
 import './styles.sass';
 import UseState from './sandboxes/useState';
-// import UseEffect from './sandboxes/useEffect';
-// import UseContext from './sandboxes/useContext';
+import UseEffect from './sandboxes/useEffect';
+import UseContext from './sandboxes/useContext';
 // import UseMemo from './sandboxes/useMemo';
 // import Redux from './sandboxes/redux';
 // import Router from './sandboxes/router';
 // import SetState from './sandboxes/setState';
 // import ComponentDidMount from './sandboxes/componentDidMount';
-// import AppContextProvider from '../context/appContextProvider';
+import AppContextProvider from '../context/appContextProvider';
 
 // import * as actions from '../redux/actions/actions';
 // const mapStateToProps = state => ({});
@@ -70,15 +70,15 @@ const Scenes = () => {
       // case 'UseState':
       //   return <UseState />;
 
-      // case 'UseEffect':
-      //   return <UseEffect />;
+      case 'UseEffect':
+        return <UseEffect />;
 
-      // case 'UseContext':
-      //   return (
-      //     <AppContextProvider>
-      //       <UseContext />
-      //     </AppContextProvider>
-      //   );
+      case 'UseContext':
+        return (
+          <AppContextProvider>
+            <UseContext />
+          </AppContextProvider>
+        );
 
       // case 'UseMemo':
       //   return <UseMemo />;
