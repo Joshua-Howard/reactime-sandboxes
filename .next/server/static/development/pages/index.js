@@ -88,10 +88,1472 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./Frontend/app.js":
+/*!*************************!*\
+  !*** ./Frontend/app.js ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.scss */ "./Frontend/index.scss");
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _src_scenes_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/scenes/index */ "./Frontend/src/scenes/index.js");
+var _jsxFileName = "/Users/josh/Documents/GitHub/reactime-sandboxes/Frontend/app.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+ // import { Provider } from 'react-redux';
+// import store from './src/redux/store';
+
+
+
+const App = () => {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_src_scenes_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./Frontend/index.scss":
+/*!*****************************!*\
+  !*** ./Frontend/index.scss ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./Frontend/src/context/appContext.js":
+/*!********************************************!*\
+  !*** ./Frontend/src/context/appContext.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const AppContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+/* harmony default export */ __webpack_exports__["default"] = (AppContext);
+
+/***/ }),
+
+/***/ "./Frontend/src/context/appContextProvider.js":
+/*!****************************************************!*\
+  !*** ./Frontend/src/context/appContextProvider.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _appContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./appContext */ "./Frontend/src/context/appContext.js");
+var _jsxFileName = "/Users/josh/Documents/GitHub/reactime-sandboxes/Frontend/src/context/appContextProvider.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+/* eslint-disable import/named */
+
+
+
+function AppContextProvider(props) {
+  const {
+    children
+  } = props;
+  const {
+    0: count,
+    1: setCount
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  return __jsx(_appContext__WEBPACK_IMPORTED_MODULE_1__["default"].Provider, {
+    value: {
+      count,
+
+      setCount() {
+        setCount(lastValue => lastValue + 1);
+      }
+
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, children);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (AppContextProvider);
+
+/***/ }),
+
+/***/ "./Frontend/src/redux/actions/actionTypes.js":
+/*!***************************************************!*\
+  !*** ./Frontend/src/redux/actions/actionTypes.js ***!
+  \***************************************************/
+/*! exports provided: INCREASE_COUNT */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INCREASE_COUNT", function() { return INCREASE_COUNT; });
+const INCREASE_COUNT = 'INCREASE_COUNT';
+
+/***/ }),
+
+/***/ "./Frontend/src/redux/actions/actions.js":
+/*!***********************************************!*\
+  !*** ./Frontend/src/redux/actions/actions.js ***!
+  \***********************************************/
+/*! exports provided: increaseCount */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "increaseCount", function() { return increaseCount; });
+/* harmony import */ var _actionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./actionTypes */ "./Frontend/src/redux/actions/actionTypes.js");
+
+const increaseCount = () => ({
+  type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["INCREASE_COUNT"]
+});
+
+/***/ }),
+
+/***/ "./Frontend/src/redux/reducers/coreReducer.js":
+/*!****************************************************!*\
+  !*** ./Frontend/src/redux/reducers/coreReducer.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/actionTypes */ "./Frontend/src/redux/actions/actionTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+const initialState = {
+  count: 0
+};
+
+const coreReducer = (state = initialState, action) => {
+  let count;
+
+  switch (action.type) {
+    case _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__["INCREASE_COUNT"]:
+      {
+        count = state.count + 1;
+        return _objectSpread({}, state, {
+          count
+        });
+      }
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (coreReducer);
+
+/***/ }),
+
+/***/ "./Frontend/src/redux/reducers/index.js":
+/*!**********************************************!*\
+  !*** ./Frontend/src/redux/reducers/index.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "redux");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _coreReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./coreReducer */ "./Frontend/src/redux/reducers/coreReducer.js");
+
+
+const reducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
+  core: _coreReducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+});
+/* harmony default export */ __webpack_exports__["default"] = (reducers);
+
+/***/ }),
+
+/***/ "./Frontend/src/redux/store.js":
+/*!*************************************!*\
+  !*** ./Frontend/src/redux/store.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "redux");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-devtools-extension */ "redux-devtools-extension");
+/* harmony import */ var redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _reducers_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reducers/index */ "./Frontend/src/redux/reducers/index.js");
+
+
+ // composeWithDevTools allows for easy access to Redux dev tools
+
+const store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_index__WEBPACK_IMPORTED_MODULE_2__["default"], Object(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1__["composeWithDevTools"])());
+/* harmony default export */ __webpack_exports__["default"] = (store);
+
+/***/ }),
+
+/***/ "./Frontend/src/scenes/index.js":
+/*!**************************************!*\
+  !*** ./Frontend/src/scenes/index.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../redux/store */ "./Frontend/src/redux/store.js");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.sass */ "./Frontend/src/scenes/styles.sass");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_sass__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _sandboxes_useState__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sandboxes/useState */ "./Frontend/src/scenes/sandboxes/useState.js");
+/* harmony import */ var _sandboxes_useEffect__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sandboxes/useEffect */ "./Frontend/src/scenes/sandboxes/useEffect.js");
+/* harmony import */ var _sandboxes_useContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sandboxes/useContext */ "./Frontend/src/scenes/sandboxes/useContext.js");
+/* harmony import */ var _sandboxes_useMemo__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./sandboxes/useMemo */ "./Frontend/src/scenes/sandboxes/useMemo.js");
+/* harmony import */ var _sandboxes_redux__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./sandboxes/redux */ "./Frontend/src/scenes/sandboxes/redux.js");
+/* harmony import */ var _sandboxes_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./sandboxes/router */ "./Frontend/src/scenes/sandboxes/router.js");
+/* harmony import */ var _sandboxes_setState__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./sandboxes/setState */ "./Frontend/src/scenes/sandboxes/setState.js");
+/* harmony import */ var _sandboxes_componentDidMount__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./sandboxes/componentDidMount */ "./Frontend/src/scenes/sandboxes/componentDidMount.js");
+/* harmony import */ var _context_appContextProvider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../context/appContextProvider */ "./Frontend/src/context/appContextProvider.js");
+var _jsxFileName = "/Users/josh/Documents/GitHub/reactime-sandboxes/Frontend/src/scenes/index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+ // import { connect } from 'react-redux';
+
+
+
+
+
+
+
+
+
+
+ // import * as actions from '../redux/actions/actions';
+// const mapStateToProps = state => ({});
+// const mapDispatchToProps = dispatch => ({});
+
+const Scenes = () => {
+  const {
+    0: activeSandbox,
+    1: setActiveSandbox
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('UseState');
+
+  function changeSandbox(e) {
+    const {
+      innerText
+    } = e.target;
+    setActiveSandbox(innerText);
+  }
+
+  function sandboxButtons() {
+    const buttonsArray = ['UseState', 'UseEffect', 'UseContext', 'UseMemo', '|', 'Redux', 'Router', '|', 'SetState', 'ComponentDidMount'];
+    const buttons = buttonsArray.map((buttonName, index) => {
+      if (buttonName === '|') {
+        return __jsx("div", {
+          key: buttonName + index,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 44
+          },
+          __self: this
+        }, buttonName);
+      }
+
+      return __jsx("button", {
+        key: buttonName + index,
+        type: "button",
+        onClick: changeSandbox,
+        style: activeSandbox === buttonName ? {
+          outline: 'none',
+          backgroundColor: 'cornflowerblue'
+        } : null,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48
+        },
+        __self: this
+      }, buttonName);
+    });
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, buttons);
+  }
+
+  function displaySandbox() {
+    switch (activeSandbox) {
+      case 'UseState':
+        return __jsx(_sandboxes_useState__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69
+          },
+          __self: this
+        });
+
+      case 'UseEffect':
+        return __jsx(_sandboxes_useEffect__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 72
+          },
+          __self: this
+        });
+
+      case 'UseContext':
+        return __jsx(_context_appContextProvider__WEBPACK_IMPORTED_MODULE_12__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 76
+          },
+          __self: this
+        }, __jsx(_sandboxes_useContext__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 77
+          },
+          __self: this
+        }));
+
+      case 'UseMemo':
+        return __jsx(_sandboxes_useMemo__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 82
+          },
+          __self: this
+        });
+
+      case 'Redux':
+        return __jsx(react_redux__WEBPACK_IMPORTED_MODULE_1__["Provider"], {
+          store: _redux_store__WEBPACK_IMPORTED_MODULE_2__["default"],
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 86
+          },
+          __self: this
+        }, __jsx(_sandboxes_redux__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 87
+          },
+          __self: this
+        }));
+
+      case 'Router':
+        return __jsx(_sandboxes_router__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 92
+          },
+          __self: this
+        });
+
+      case 'SetState':
+        return __jsx(_sandboxes_setState__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 95
+          },
+          __self: this
+        });
+
+      case 'ComponentDidMount':
+        return __jsx(_sandboxes_componentDidMount__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 98
+          },
+          __self: this
+        });
+
+      default:
+        return __jsx(_sandboxes_useState__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 101
+          },
+          __self: this
+        });
+    }
+  }
+
+  return __jsx("div", {
+    className: "container-fluid",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 106
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 107
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "col d-flex justify-content-around m-3",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 108
+    },
+    __self: undefined
+  }, sandboxButtons())), __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 113
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "col text-white bg-secondary text-center font-weight-bold p-1",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 114
+    },
+    __self: undefined
+  }, "Sandbox Below")), __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 119
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "col m-5 justify-content-center",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 120
+    },
+    __self: undefined
+  }, displaySandbox())));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Scenes); // export default connect(mapStateToProps, mapDispatchToProps)(Scenes);
+
+/***/ }),
+
+/***/ "./Frontend/src/scenes/sandboxes/componentDidMount.js":
+/*!************************************************************!*\
+  !*** ./Frontend/src/scenes/sandboxes/componentDidMount.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.sass */ "./Frontend/src/scenes/sandboxes/styles.sass");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_sass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _redux_actions_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../redux/actions/actions */ "./Frontend/src/redux/actions/actions.js");
+var _jsxFileName = "/Users/josh/Documents/GitHub/reactime-sandboxes/Frontend/src/scenes/sandboxes/componentDidMount.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+class ComponentDidMount extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+
+    _defineProperty(this, "increaseCount", () => {
+      this.setState(prevState => ({
+        count: prevState.count + 1
+      }));
+    });
+
+    this.state = {
+      count: 0
+    };
+  }
+
+  componentDidMount() {
+    this.countInterval = setInterval(this.increaseCount, 100);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.countInterval);
+  }
+
+  render() {
+    const {
+      count
+    } = this.state;
+    return __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: this
+    }, __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: this
+    }, "Count will automatically increase as setState is called at an interval", ` ${count}`));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (ComponentDidMount);
+
+/***/ }),
+
+/***/ "./Frontend/src/scenes/sandboxes/redux.js":
+/*!************************************************!*\
+  !*** ./Frontend/src/scenes/sandboxes/redux.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _useStateChild__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useStateChild */ "./Frontend/src/scenes/sandboxes/useStateChild.js");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.sass */ "./Frontend/src/scenes/sandboxes/styles.sass");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_sass__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _redux_actions_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../redux/actions/actions */ "./Frontend/src/redux/actions/actions.js");
+var _jsxFileName = "/Users/josh/Documents/GitHub/reactime-sandboxes/Frontend/src/scenes/sandboxes/redux.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+const mapStateToProps = state => ({
+  count: state.core.count
+});
+
+const mapDispatchToProps = dispatch => ({
+  increaseCount: () => dispatch(_redux_actions_actions__WEBPACK_IMPORTED_MODULE_4__["increaseCount"]())
+});
+
+const Scenes = ({
+  count,
+  increaseCount
+}) => {
+  const {
+    0: stateCount,
+    1: setStateCount
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  }, __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }, "Count", ` ${count}`), __jsx("button", {
+    type: "button",
+    onClick: increaseCount,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }, "Click Here to Increase the Count (Redux Data)"), __jsx("div", {
+    className: "mt-5",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: undefined
+  }, "State Button Count", ` ${stateCount}`), __jsx("button", {
+    className: "mb-5",
+    type: "button",
+    onClick: () => setStateCount(lastCount => lastCount + 1),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: undefined
+  }, "Click Here to Increase the Count (Data Stored in State)"), __jsx(_useStateChild__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(Scenes));
+
+/***/ }),
+
+/***/ "./Frontend/src/scenes/sandboxes/router.js":
+/*!*************************************************!*\
+  !*** ./Frontend/src/scenes/sandboxes/router.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "react-router-dom");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _useState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useState */ "./Frontend/src/scenes/sandboxes/useState.js");
+/* harmony import */ var _useEffect__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./useEffect */ "./Frontend/src/scenes/sandboxes/useEffect.js");
+/* harmony import */ var _useContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./useContext */ "./Frontend/src/scenes/sandboxes/useContext.js");
+/* harmony import */ var _useMemo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./useMemo */ "./Frontend/src/scenes/sandboxes/useMemo.js");
+/* harmony import */ var _context_appContextProvider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../context/appContextProvider */ "./Frontend/src/context/appContextProvider.js");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles.sass */ "./Frontend/src/scenes/sandboxes/styles.sass");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_sass__WEBPACK_IMPORTED_MODULE_7__);
+var _jsxFileName = "/Users/josh/Documents/GitHub/reactime-sandboxes/Frontend/src/scenes/sandboxes/router.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+
+ // import * as actions from '../redux/actions/actions';
+// const mapStateToProps = state => ({});
+// const mapDispatchToProps = dispatch => ({});
+
+const RouterApp = () => __jsx(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 16
+  },
+  __self: undefined
+}, __jsx("div", {
+  className: "pb-4",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 17
+  },
+  __self: undefined
+}, __jsx(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  exact: true,
+  to: "/",
+  className: "font-weight-bold mr-5",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 18
+  },
+  __self: undefined
+}, "Use State Route"), __jsx(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  to: "/useEffectRoute",
+  className: "font-weight-bold mr-5",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 22
+  },
+  __self: undefined
+}, "Use Effect Route"), __jsx(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  to: "/useContextRoute",
+  className: "font-weight-bold mr-5",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 26
+  },
+  __self: undefined
+}, "Use Context Route"), __jsx(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  to: "/useMemoRoute",
+  className: "font-weight-bold mr-5",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 30
+  },
+  __self: undefined
+}, "Use Memo Route")), __jsx(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 34
+  },
+  __self: undefined
+}, __jsx(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  exact: true,
+  path: "/",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 35
+  },
+  __self: undefined
+}, __jsx(_useState__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 36
+  },
+  __self: undefined
+})), __jsx(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  path: "/useEffectRoute",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 39
+  },
+  __self: undefined
+}, __jsx(_useEffect__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 40
+  },
+  __self: undefined
+})), __jsx(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  path: "/useContextRoute",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 43
+  },
+  __self: undefined
+}, __jsx(_context_appContextProvider__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 44
+  },
+  __self: undefined
+}, __jsx(_useContext__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 45
+  },
+  __self: undefined
+}))), __jsx(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  path: "/useMemoRoute",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 49
+  },
+  __self: undefined
+}, __jsx(_useMemo__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 50
+  },
+  __self: undefined
+}))));
+
+/* harmony default export */ __webpack_exports__["default"] = (RouterApp); // export default connect(mapStateToProps, mapDispatchToProps)(Scenes);
+
+/***/ }),
+
+/***/ "./Frontend/src/scenes/sandboxes/setState.js":
+/*!***************************************************!*\
+  !*** ./Frontend/src/scenes/sandboxes/setState.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.sass */ "./Frontend/src/scenes/sandboxes/styles.sass");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_sass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _setStateChild__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./setStateChild */ "./Frontend/src/scenes/sandboxes/setStateChild.js");
+var _jsxFileName = "/Users/josh/Documents/GitHub/reactime-sandboxes/Frontend/src/scenes/sandboxes/setState.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+class SetState extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  render() {
+    const {
+      count
+    } = this.state;
+    return __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "font-weight-bold",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }, "Count", ` ${count}`), __jsx("button", {
+      type: "button",
+      onClick: () => // eslint-disable-next-line prettier/prettier
+      this.setState(prevState => ({
+        count: prevState.count + 1
+      })),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }, "Click Here to Increase the Count (setState)"), __jsx("div", {
+      className: "bg-primary p-1 my-3 mx-5 vh-5 text-white text-center",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34
+      },
+      __self: this
+    }, "Child Component Below"), __jsx(_setStateChild__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38
+      },
+      __self: this
+    }));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SetState);
+
+/***/ }),
+
+/***/ "./Frontend/src/scenes/sandboxes/setStateChild.js":
+/*!********************************************************!*\
+  !*** ./Frontend/src/scenes/sandboxes/setStateChild.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.sass */ "./Frontend/src/scenes/sandboxes/styles.sass");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_sass__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/josh/Documents/GitHub/reactime-sandboxes/Frontend/src/scenes/sandboxes/setStateChild.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+/* eslint-disable react/no-unescaped-entities */
+
+
+
+class SetStateChild extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  render() {
+    const {
+      count
+    } = this.state;
+    return __jsx("div", {
+      className: "mt-2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "bg-light",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }, "Child Component's Counter", ` ${count}`), __jsx("button", {
+      type: "button",
+      className: "bg-secondary text-white font-weight-bold",
+      onClick: () => // eslint-disable-next-line prettier/prettier
+      this.setState(prevState => ({
+        count: prevState.count + 1
+      })),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }, "This component is mounted inside of the component seen above. Click Here to Increase the Count of the Child Component (setState)"));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SetStateChild);
+
+/***/ }),
+
+/***/ "./Frontend/src/scenes/sandboxes/styles.sass":
+/*!***************************************************!*\
+  !*** ./Frontend/src/scenes/sandboxes/styles.sass ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./Frontend/src/scenes/sandboxes/useContext.js":
+/*!*****************************************************!*\
+  !*** ./Frontend/src/scenes/sandboxes/useContext.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _context_appContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../context/appContext */ "./Frontend/src/context/appContext.js");
+/* harmony import */ var _useStateChild__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useStateChild */ "./Frontend/src/scenes/sandboxes/useStateChild.js");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.sass */ "./Frontend/src/scenes/sandboxes/styles.sass");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_sass__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/Users/josh/Documents/GitHub/reactime-sandboxes/Frontend/src/scenes/sandboxes/useContext.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+ // import * as actions from '../redux/actions/actions';
+// const mapStateToProps = state => ({});
+// const mapDispatchToProps = dispatch => ({});
+
+const UseContext = () => {
+  const {
+    count,
+    setCount
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_appContext__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  const {
+    0: stateCount,
+    1: setStateCount
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }, __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }, "Context Count", ` ${count}`), __jsx("button", {
+    type: "button",
+    onClick: () => setCount(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: undefined
+  }, "Click Here to Increase the Count (Context Data)"), __jsx("div", {
+    className: "mt-5",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }, "State Button Count", ` ${stateCount}`), __jsx("button", {
+    className: "mb-5",
+    type: "button",
+    onClick: () => setStateCount(lastCount => lastCount + 1),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: undefined
+  }, "Click Here to Increase the Count (Data Stored in State)"), __jsx(_useStateChild__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: undefined
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (UseContext); // export default connect(mapStateToProps, mapDispatchToProps)(Scenes);
+
+/***/ }),
+
+/***/ "./Frontend/src/scenes/sandboxes/useEffect.js":
+/*!****************************************************!*\
+  !*** ./Frontend/src/scenes/sandboxes/useEffect.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.sass */ "./Frontend/src/scenes/sandboxes/styles.sass");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_sass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _useEffectAndState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useEffectAndState */ "./Frontend/src/scenes/sandboxes/useEffectAndState.js");
+var _jsxFileName = "/Users/josh/Documents/GitHub/reactime-sandboxes/Frontend/src/scenes/sandboxes/useEffect.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+/* eslint-disable react/jsx-one-expression-per-line */
+
+/* eslint-disable react/no-unescaped-entities */
+
+/* eslint-disable no-undef */
+ // import { connect } from 'react-redux';
+
+
+ // import * as actions from '../redux/actions/actions';
+// const mapStateToProps = state => ({});
+// const mapDispatchToProps = dispatch => ({});
+
+const UseEffect = () => {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    const effectDiv = document.getElementById('effectDiv'); //* Create three divs to append to effectDiv
+
+    const newDivElement = document.createElement('div');
+    const newDivTextNode = document.createTextNode('New Div');
+    const newDivElement2 = document.createElement('div');
+    const newDivTextNode2 = document.createTextNode('New Div 2');
+    const newDivElement3 = document.createElement('div');
+    const newDivTextNode3 = document.createTextNode('New Div 3');
+    newDivElement.appendChild(newDivTextNode);
+    newDivElement2.appendChild(newDivTextNode2);
+    newDivElement3.appendChild(newDivTextNode3);
+    const timeout1 = setTimeout(() => effectDiv.appendChild(newDivElement), 300);
+    const timeout2 = setTimeout(() => effectDiv.appendChild(newDivElement2), 1200);
+    const timeout3 = setTimeout(() => effectDiv.appendChild(newDivElement3), 2200);
+    return () => {
+      clearTimeout(timeout1);
+      clearTimeout(timeout2);
+      clearTimeout(timeout3);
+    };
+  }, []);
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+    className: "font-weight-bold",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: undefined
+  }, "3 new divs will appear below due to elements being appended within useEffect (setTimeout is used)", __jsx("div", {
+    id: "effectDiv",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: undefined
+  })), __jsx("div", {
+    className: "bg-primary p-1 my-3 mx-5 vh-5 text-white text-center font-weight-bold",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: undefined
+  }, "New Test Below"), __jsx("div", {
+    className: "font-weight-bold",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63
+    },
+    __self: undefined
+  }, "UseEffect triggers an interval that changes this state variable =>", ' ', __jsx(_useEffectAndState__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: undefined
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (UseEffect); // export default connect(mapStateToProps, mapDispatchToProps)(Scenes);
+
+/***/ }),
+
+/***/ "./Frontend/src/scenes/sandboxes/useEffectAndState.js":
+/*!************************************************************!*\
+  !*** ./Frontend/src/scenes/sandboxes/useEffectAndState.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _useStateChild__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useStateChild */ "./Frontend/src/scenes/sandboxes/useStateChild.js");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.sass */ "./Frontend/src/scenes/sandboxes/styles.sass");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_sass__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/josh/Documents/GitHub/reactime-sandboxes/Frontend/src/scenes/sandboxes/useEffectAndState.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+ // import { connect } from 'react-redux';
+
+
+ // import * as actions from '../redux/actions/actions';
+// const mapStateToProps = state => ({});
+// const mapDispatchToProps = dispatch => ({});
+
+const UseEffectAndState = () => {
+  const {
+    0: count,
+    1: setCount
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const {
+    0: intervalCount,
+    1: setIntervalCount
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const {
+    0: buttonCount,
+    1: setButtonCount
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const {
+    0: effectCount,
+    1: setEffectCount
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    const effectInterval = setInterval(() => setCount(prevCount => prevCount + 1), 50);
+    if (intervalCount === 20) clearInterval(effectInterval);
+    return () => clearInterval(effectInterval);
+  }, [intervalCount]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (count % 10 === 0) setIntervalCount(prevCount => prevCount + 1);
+  }, [count]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (!(buttonCount % 2)) setEffectCount(lastCount => lastCount + 1);
+  }, [buttonCount]);
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, `${count}. This next number increments at each interval of 10 and stops both counters once its value reaches 20 => ${intervalCount}`, __jsx("div", {
+    className: "mt-5",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    },
+    __self: undefined
+  }, "Button Count", buttonCount), __jsx("button", {
+    type: "button",
+    className: "mt-3",
+    onClick: () => setButtonCount(buttonCountVal => buttonCountVal + 1),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44
+    },
+    __self: undefined
+  }, "Click Here to Increase the State Count Directly Above"), __jsx("div", {
+    className: "mt-3 mb-5",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: undefined
+  }, "Effect Count Should Increase When Button Count is Even:", effectCount), __jsx(_useStateChild__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: undefined
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (UseEffectAndState); // export default connect(mapStateToProps, mapDispatchToProps)(Scenes);
+
+/***/ }),
+
+/***/ "./Frontend/src/scenes/sandboxes/useMemo.js":
+/*!**************************************************!*\
+  !*** ./Frontend/src/scenes/sandboxes/useMemo.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _useStateChild__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useStateChild */ "./Frontend/src/scenes/sandboxes/useStateChild.js");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.sass */ "./Frontend/src/scenes/sandboxes/styles.sass");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_sass__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/josh/Documents/GitHub/reactime-sandboxes/Frontend/src/scenes/sandboxes/useMemo.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+ // import * as actions from '../redux/actions/actions';
+// const mapStateToProps = state => ({});
+// const mapDispatchToProps = dispatch => ({});
+
+const UseMemo = () => {
+  const {
+    0: count,
+    1: setCount
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const {
+    0: frozen,
+    1: setFrozen
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: stateCount,
+    1: setStateCount
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const countDisplay = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(() => () => __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }, "Count", ` ${count}`), [frozen ? null : count]);
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }, countDisplay(), __jsx("button", {
+    type: "button",
+    onClick: () => setCount(lastCount => lastCount + 1),
+    style: frozen ? {
+      backgroundColor: 'red'
+    } : null,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
+  }, "Click Here to Increase the Count"), __jsx("button", {
+    type: "button",
+    onClick: () => setFrozen(lastBoolean => !lastBoolean),
+    className: "ml-4",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  }, "Click Here to Toggle Freezing the Count. Status:", __jsx("span", {
+    className: "font-weight-bold",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }, frozen ? ' Frozen' : ' Not Frozen')), __jsx("div", {
+    className: "mt-5",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: undefined
+  }, "State Button Count", ` ${stateCount}`), __jsx("button", {
+    className: "mb-5",
+    type: "button",
+    onClick: () => setStateCount(lastCount => lastCount + 1),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: undefined
+  }, "Click Here to Increase the Count (Data Stored in State)"), __jsx(_useStateChild__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: undefined
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (UseMemo); // export default connect(mapStateToProps, mapDispatchToProps)(Scenes);
+
+/***/ }),
+
+/***/ "./Frontend/src/scenes/sandboxes/useState.js":
+/*!***************************************************!*\
+  !*** ./Frontend/src/scenes/sandboxes/useState.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _useStateChild__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useStateChild */ "./Frontend/src/scenes/sandboxes/useStateChild.js");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.sass */ "./Frontend/src/scenes/sandboxes/styles.sass");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_sass__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/josh/Documents/GitHub/reactime-sandboxes/Frontend/src/scenes/sandboxes/useState.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+ // import { connect } from 'react-redux';
+
+ // import * as actions from '../redux/actions/actions';
+// const mapStateToProps = state => ({});
+// const mapDispatchToProps = dispatch => ({});
+
+const UseState = () => {
+  const {
+    0: count,
+    1: setCount
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }, __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }, "Count", ` ${count}`), __jsx("button", {
+    type: "button",
+    onClick: () => setCount(lastCount => lastCount + 1),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: undefined
+  }, "Click Here to Increase the Count")), __jsx("div", {
+    className: "bg-primary p-1 my-3 mx-5 vh-5 text-white text-center font-weight-bold",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: undefined
+  }, "New Test Below"), __jsx(_useStateChild__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: undefined
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (UseState); // export default connect(mapStateToProps, mapDispatchToProps)(Scenes);
+
+/***/ }),
+
+/***/ "./Frontend/src/scenes/sandboxes/useStateChild.js":
+/*!********************************************************!*\
+  !*** ./Frontend/src/scenes/sandboxes/useStateChild.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.sass */ "./Frontend/src/scenes/sandboxes/styles.sass");
+/* harmony import */ var _styles_sass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_sass__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/josh/Documents/GitHub/reactime-sandboxes/Frontend/src/scenes/sandboxes/useStateChild.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+ // import { connect } from 'react-redux';
+
+ // import * as actions from '../redux/actions/actions';
+// const mapStateToProps = state => ({});
+// const mapDispatchToProps = dispatch => ({});
+
+const UseStateChild = () => {
+  const {
+    0: count2,
+    1: setCount2
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const {
+    0: count3,
+    1: setCount3
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1000);
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }, __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }, "Child Component Count Increase (UseState):", ` ${count2}`), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }, "Child Component Count Decrease (UseState):", ` ${count3}`), __jsx("button", {
+    type: "button",
+    onClick: () => {
+      setCount2(lastCount => lastCount + 1);
+      setCount3(lastCount => lastCount - 1);
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }, "Click Here to Change Both Child Counts Simultaneously")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (UseStateChild); // export default connect(mapStateToProps, mapDispatchToProps)(Scenes);
+
+/***/ }),
+
+/***/ "./Frontend/src/scenes/styles.sass":
+/*!*****************************************!*\
+  !*** ./Frontend/src/scenes/styles.sass ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
 
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js":
 /*!*******************************************************************************!*\
@@ -2065,43 +3527,83 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Frontend_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Frontend/app */ "./Frontend/app.js");
 var _jsxFileName = "/Users/josh/Documents/GitHub/reactime-sandboxes/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 function Index() {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
-    },
-    __self: this
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/about",
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 6
     },
     __self: this
-  }, __jsx("a", {
-    title: "About Page",
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7
     },
     __self: this
-  }, "About Page")), __jsx("p", {
+  }, __jsx("a", {
+    className: "ml-5",
+    title: "Index Page",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 8
     },
     __self: this
-  }, "Hello Next.js"));
+  }, "Index Page")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/about",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, __jsx("a", {
+    className: "ml-5",
+    title: "About Page",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, "About Page")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/last",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, __jsx("a", {
+    className: "ml-5",
+    title: "Last Page",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, "Last Page")), __jsx("p", {
+    className: "ml-5",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }, "This is the first Next.js Page"), __jsx(_Frontend_app__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }));
 }
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2198,6 +3700,50 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-redux":
+/*!******************************!*\
+  !*** external "react-redux" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-redux");
+
+/***/ }),
+
+/***/ "react-router-dom":
+/*!***********************************!*\
+  !*** external "react-router-dom" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router-dom");
+
+/***/ }),
+
+/***/ "redux":
+/*!************************!*\
+  !*** external "redux" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+
+/***/ "redux-devtools-extension":
+/*!*******************************************!*\
+  !*** external "redux-devtools-extension" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("redux-devtools-extension");
 
 /***/ }),
 

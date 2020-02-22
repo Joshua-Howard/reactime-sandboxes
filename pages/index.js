@@ -1,12 +1,26 @@
 import Link from 'next/link';
+import Sandboxes from '../Frontend/app';
 
 export default function Index() {
   return (
     <div>
-      <Link href="/about">
-        <a title="About Page">About Page</a>
+      <Link href="/">
+        <a className="ml-5" title="Index Page">
+          Index Page
+        </a>
       </Link>
-      <p>Hello Next.js</p>
+      <Link href="/about">
+        <a className="ml-5" title="About Page">
+          About Page
+        </a>
+      </Link>
+      <Link href="/last">
+        <a className="ml-5" title="Last Page">
+          Last Page
+        </a>
+      </Link>
+      <p className="ml-5">This is the first Next.js Page</p>
+      <Sandboxes />
     </div>
   );
 }
