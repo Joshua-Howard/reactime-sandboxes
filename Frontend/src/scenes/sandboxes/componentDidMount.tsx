@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import './styles.sass';
 import { increaseCount } from '../../redux/actions/actions';
 
-class ComponentDidMount extends Component {
-  constructor(props) {
-    super(props);
+interface StateInterface {
+  count: number;
+}
+
+class ComponentDidMount extends Component<{}, StateInterface> {
+  private countInterval: NodeJS.Timer;
+
+  constructor({}) {
+    super({});
 
     this.state = {
       count: 0

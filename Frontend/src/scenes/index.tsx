@@ -10,7 +10,7 @@ import UseMemo from './sandboxes/useMemo';
 import Redux from './sandboxes/redux';
 import Router from './sandboxes/router';
 import SetState from './sandboxes/setState';
-// import ComponentDidMount from './sandboxes/componentDidMount';
+import ComponentDidMount from './sandboxes/componentDidMount';
 import AppContextProvider from '../context/appContextProvider';
 
 // import * as actions from '../redux/actions/actions';
@@ -96,8 +96,8 @@ const Scenes = () => {
       case 'SetState':
         return <SetState />;
 
-      // case 'ComponentDidMount':
-      //   return <ComponentDidMount />;
+      case 'ComponentDidMount':
+        return <ComponentDidMount />;
 
       default:
         return <UseState />;
