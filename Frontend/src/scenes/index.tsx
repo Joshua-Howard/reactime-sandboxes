@@ -8,8 +8,8 @@ import UseEffect from './sandboxes/useEffect';
 import UseContext from './sandboxes/useContext';
 import UseMemo from './sandboxes/useMemo';
 import Redux from './sandboxes/redux';
-// import Router from './sandboxes/router';
-// import SetState from './sandboxes/setState';
+import Router from './sandboxes/router';
+import SetState from './sandboxes/setState';
 // import ComponentDidMount from './sandboxes/componentDidMount';
 import AppContextProvider from '../context/appContextProvider';
 
@@ -90,11 +90,11 @@ const Scenes = () => {
           </Provider>
         );
 
-      // case 'Router':
-      //   return <Router />;
+      case 'Router':
+        return <Router />;
 
-      // case 'SetState':
-      //   return <SetState />;
+      case 'SetState':
+        return <SetState />;
 
       // case 'ComponentDidMount':
       //   return <ComponentDidMount />;

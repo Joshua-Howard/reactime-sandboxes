@@ -2,9 +2,13 @@
 import React, { Component } from 'react';
 import './styles.sass';
 
-class SetStateChild extends Component {
-  constructor(props) {
-    super(props);
+interface StateInterface {
+  count: number;
+}
+
+class SetStateChild extends Component<{}, StateInterface> {
+  constructor({}) {
+    super({});
 
     this.state = {
       count: 0
@@ -26,7 +30,8 @@ class SetStateChild extends Component {
           className="bg-secondary text-white font-weight-bold"
           onClick={() =>
             // eslint-disable-next-line prettier/prettier
-            this.setState(prevState => ({ count: prevState.count + 1 }))}
+            this.setState(prevState => ({ count: prevState.count + 1 }))
+          }
         >
           This component is mounted inside of the component seen above. Click
           Here to Increase the Count of the Child Component (setState)

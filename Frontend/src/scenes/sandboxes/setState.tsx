@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import './styles.sass';
 import SetStateChild from './setStateChild';
+import { AnyAction } from 'redux';
 
-class SetState extends Component {
-  constructor(props) {
-    super(props);
+interface StateInterface {
+  count: number;
+}
+
+class SetState extends Component<{}, StateInterface> {
+  constructor({}) {
+    super({});
 
     this.state = {
       count: 0
