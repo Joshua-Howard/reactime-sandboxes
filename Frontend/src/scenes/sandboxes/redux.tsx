@@ -1,18 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, Dispatch } from 'react';
 import { connect } from 'react-redux';
 import UseStateChild from './useStateChild';
 import './styles.sass';
 
 import * as actions from '../../redux/actions/actions';
+import { RootState } from '../../redux/reducers/index';
+import { CoreActionTypes } from '../../redux/actions/actionTypes';
 
-const mapStateToProps = state => ({
+interface StateProps {
+  count: Number;
+}
+
+interface DispatchProps {
+  increaseCount: () => void;
+}
+
+type Props = StateProps & DispatchProps;
+
+const mapStateToProps = (state: RootState) => ({
   count: state.core.count
 });
-const mapDispatchToProps = dispatch => ({
-  increaseCount: () => dispatch(actions.increaseCount())
-});
+const mapDispatchToProps = (dispatch: Dispatch<CoreActionTypes>) => {
+  return {
+    increaseCount: () => dispatch(actions.increaseCount())
+  };
+};
 
-const Scenes = ({ count, increaseCount }) => {
+const Redux = ({ count, increaseCount }: Props) => {
   const [stateCount, setStateCount] = useState(0);
 
   return (
@@ -44,4 +58,4 @@ const Scenes = ({ count, increaseCount }) => {
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Scenes);
+export default connect(mapStateToProps, mapDispatchToProps)(Redux);

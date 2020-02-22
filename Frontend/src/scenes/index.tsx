@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-// import { Provider } from 'react-redux';
-// import store from '../redux/store';
+import { Provider } from 'react-redux';
+import store from '../redux/store';
 // import { connect } from 'react-redux';
 import './styles.sass';
 import UseState from './sandboxes/useState';
 import UseEffect from './sandboxes/useEffect';
 import UseContext from './sandboxes/useContext';
-// import UseMemo from './sandboxes/useMemo';
-// import Redux from './sandboxes/redux';
+import UseMemo from './sandboxes/useMemo';
+import Redux from './sandboxes/redux';
 // import Router from './sandboxes/router';
 // import SetState from './sandboxes/setState';
 // import ComponentDidMount from './sandboxes/componentDidMount';
@@ -80,15 +80,15 @@ const Scenes = () => {
           </AppContextProvider>
         );
 
-      // case 'UseMemo':
-      //   return <UseMemo />;
+      case 'UseMemo':
+        return <UseMemo />;
 
-      // case 'Redux':
-      //   return (
-      //     <Provider store={store}>
-      //       <Redux />
-      //     </Provider>
-      //   );
+      case 'Redux':
+        return (
+          <Provider store={store}>
+            <Redux />
+          </Provider>
+        );
 
       // case 'Router':
       //   return <Router />;
