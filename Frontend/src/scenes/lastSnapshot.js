@@ -7,7 +7,7 @@ import './styles.sass';
 // const mapStateToProps = state => ({});
 // const mapDispatchToProps = dispatch => ({});
 
-const LastSnapshot = () => {
+const LastSnapshot = props => {
   const [currentSnapshot, setCurrentSnapshot] = useState('');
 
   function replacer(name, val) {
@@ -26,6 +26,15 @@ const LastSnapshot = () => {
       }
     });
   }, []);
+
+  /*
+  // This method is for testing. Setting state after the activeSandbox is changed modifies the overall behavior of the sandbox environment.
+  const { activeSandbox } = props;
+  useEffect(() => {
+    // Reset the current snapshot when a new sandbox is entered
+    setCurrentSnapshot('');
+  }, [activeSandbox]);
+  */
 
   return (
     <div>

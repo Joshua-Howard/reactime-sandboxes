@@ -129,7 +129,7 @@ const Scenes = () => {
       </div>
 
       <div className="row">
-        <LastSnapshot />
+        <LastSnapshot activeSandbox={activeSandbox} />
       </div>
     </div>
   );
