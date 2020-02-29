@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --open 'Google Chrome'",
-    "test": "webpack && jest",
+    "test": "webpack --mode=development && jest",
     "jest": "jest",
-    "server": "node Backend/server"
+    "server": "node Backend/server",
+    "webpack": "webpack --mode=development"
   },
   "repository": {
     "type": "git",
