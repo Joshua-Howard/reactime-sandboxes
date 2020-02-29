@@ -11,6 +11,7 @@ import UseMemo from './sandboxes/useMemo';
 import Redux from './sandboxes/redux';
 import Router from './sandboxes/router';
 import SetState from './sandboxes/setState';
+import SetStateConditional from './sandboxes/setStateConditional';
 import ComponentDidMount from './sandboxes/componentDidMount';
 import AppContextProvider from '../context/appContextProvider';
 import LastSnapshot from './lastSnapshot';
@@ -20,7 +21,7 @@ import LastSnapshot from './lastSnapshot';
 // const mapDispatchToProps = dispatch => ({});
 
 const Scenes = () => {
-  const [activeSandbox, setActiveSandbox] = useState('UseState');
+  const [activeSandbox, setActiveSandbox] = useState('UseState'); // UseState
 
   function changeSandbox(e) {
     const { innerText } = e.target;
@@ -38,6 +39,7 @@ const Scenes = () => {
       'Router',
       '|',
       'SetState',
+      'SetStateConditional',
       'ComponentDidMount'
     ];
 
@@ -96,6 +98,9 @@ const Scenes = () => {
 
       case 'SetState':
         return <SetState />;
+
+      case 'SetStateConditional':
+        return <SetStateConditional />;
 
       case 'ComponentDidMount':
         return <ComponentDidMount />;
