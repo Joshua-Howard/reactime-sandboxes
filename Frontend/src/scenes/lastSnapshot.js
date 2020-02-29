@@ -38,7 +38,11 @@ const LastSnapshot = props => {
 
   return (
     <div>
-      <div className="ml-5 mt-2" style={{ whiteSpace: 'pre' }}>
+      <div
+        id="lastSnapshot"
+        className="ml-5 mt-2"
+        style={{ whiteSpace: 'pre' }}
+      >
         {currentSnapshot}
       </div>
     </div>

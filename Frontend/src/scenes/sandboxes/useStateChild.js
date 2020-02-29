@@ -23,6 +23,7 @@ const UseStateChild = () => {
         </div>
 
         <button
+          id="childBothButton"
           type="button"
           onClick={() => {
             setCount2(lastCount => lastCount + 1);

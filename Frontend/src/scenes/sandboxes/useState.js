@@ -19,6 +19,7 @@ const UseState = () => {
         </div>
 
         <button
+          id="increaseButton"
           type="button"
           onClick={() => setCount(lastCount => lastCount + 1)}
         >

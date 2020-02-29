@@ -49,6 +49,7 @@ const Scenes = () => {
       return (
         <button
           key={buttonName + index}
+          id={buttonName}
           type="button"
           onClick={changeSandbox}
           style={
