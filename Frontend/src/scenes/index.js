@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
@@ -12,6 +13,7 @@ import Router from './sandboxes/router';
 import SetState from './sandboxes/setState';
 import ComponentDidMount from './sandboxes/componentDidMount';
 import AppContextProvider from '../context/appContextProvider';
+import LastSnapshot from './lastSnapshot';
 
 // import * as actions from '../redux/actions/actions';
 // const mapStateToProps = state => ({});
@@ -118,6 +120,16 @@ const Scenes = () => {
 
       <div className="row">
         <div className="col m-5 justify-content-center">{displaySandbox()}</div>
+      </div>
+
+      <div className="row">
+        <div className="col text-white bg-secondary text-center font-weight-bold p-1">
+          The Most Recent Snapshot is Below
+        </div>
+      </div>
+
+      <div className="row">
+        <LastSnapshot />
       </div>
     </div>
   );
