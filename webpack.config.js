@@ -1,11 +1,31 @@
 const path = require('path');
 
 module.exports = {
+  resolve: {
+    // Add '.ts' and '.tsx' as resolvable extensions.
+    extensions: ['.ts', '.tsx', '.js']
+  },
   entry: {
-    index: path.join(__dirname, 'hooks-redux-router', 'Frontend', 'index.js')
+    index: path.join(__dirname, 'hooks-redux-router', 'Frontend', 'index.js'),
+    typescript: path.join(__dirname, 'typescript', 'Frontend', 'index.tsx')
   },
   module: {
     rules: [
+      {
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'ts-loader'
+          }
+        ]
+      },
+      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader'
+      },
       {
         test: /\.jsx?/,
         exclude: /node_modules/,
@@ -19,7 +39,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'Frontend', 'public'),
-    filename: 'bundle.js'
+    filename: '[name]-bundle.js'
   },
   devServer: {
     contentBase: [
