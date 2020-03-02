@@ -20,6 +20,7 @@ const UseState = () => {
 
         <button
           type="button"
+          id="increaseButton"
           onClick={() => setCount(lastCount => lastCount + 1)}
         >
           Click Here to Increase the Count
