@@ -1,7 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.join(__dirname, 'Frontend', 'index.js'),
+  entry: {
+    index: path.join(__dirname, 'hooks-redux-router', 'Frontend', 'index.js')
+  },
   module: {
     rules: [
       {
