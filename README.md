@@ -1,2 +1,2 @@
 # reactime-sandboxes
-Sandboxes for testing Reactime
+Sandboxes for Testing Reactime with React Hooks, Redux, Concurrent Mode / Suspense, Next.js, and React Router
